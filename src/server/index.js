@@ -39,7 +39,7 @@ app.get('/test', function (req, res) {
 });
 
 
-app.post('/testing', async (req, res) => {
+app.post('/test', async (req, res) => {
     textapi.sentiment({
         'text': req.body.input
     }, function(error, response) {
