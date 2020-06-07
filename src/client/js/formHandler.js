@@ -9,7 +9,7 @@ function handleSubmit(event) {
     let userInput = {
         input: formText
     };
-    fetch('/testing', {
+    fetch('/test', {
         method: 'POST',
         credentials: 'same-origin',
         body: JSON.stringify(userInput),
