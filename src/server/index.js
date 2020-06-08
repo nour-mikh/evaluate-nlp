@@ -45,6 +45,7 @@ app.post('/test', async (req, res) => {
     }, function(error, response) {
         if (error === null) {
             console.log(response);
+            res.send(response);
         }
     });
   })

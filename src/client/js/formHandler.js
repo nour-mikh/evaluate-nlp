@@ -18,7 +18,9 @@ function handleSubmit(event) {
     .then(res => res.json())
     .then(function(res) {
         console.log(res);
-        document.getElementById('results').innerHTML = res;
+        document.getElementById('text').innerHTML ='Text: ' + formText;
+        document.getElementById('polarity').innerHTML = 'Polarity: ' + res.polarity;
+        document.getElementById('subjectivity').innerHTML = 'Subjectivity: ' + res.subjectivity;
     })
 }
 
