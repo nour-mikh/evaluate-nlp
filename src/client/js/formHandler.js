@@ -9,20 +9,29 @@ function handleSubmit(event) {
     let userInput = {
         input: formText
     };
-    fetch('/test', {
-        method: 'POST',
-        credentials: 'same-origin',
-        body: JSON.stringify(userInput),
-        headers: {"Content-Type": "application/json"},
-    },)
-    .then(res => res.json())
-    .then(function(res) {
-        console.log(res);
-        document.getElementById('text').innerHTML ='Text: ' + formText;
-        document.getElementById('polarity').innerHTML = 'Polarity: ' + res.polarity;
-        document.getElementById('subjectivity').innerHTML = 'Subjectivity: ' + res.subjectivity;
-    })
+    callApi(userInput);
 }
 
-export { handleSubmit }
+function callApi(userInput) {
+    let formText = document.getElementById('name').value
+    fetch('/test', {
+    method: 'POST',
+    credentials: 'same-origin',
+    body: JSON.stringify(userInput),
+    headers: {"Content-Type": "application/json"},
+},)
+.then(res => res.json())
+.then(function(res) {
+    console.log(res);
+    document.getElementById('text').innerHTML ='Text: ' + formText;
+    document.getElementById('polarity').innerHTML = 'Polarity: ' + res.polarity;
+    document.getElementById('subjectivity').innerHTML = 'Subjectivity: ' + res.subjectivity;
+})
+}
+
+export { 
+    handleSubmit, 
+    callApi
+}
+
 

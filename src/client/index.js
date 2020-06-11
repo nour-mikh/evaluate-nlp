@@ -13,5 +13,5 @@ alert("I EXIST")
 
 export {
     checkForName,
-    handleSubmit
+    handleSubmit,
 }
