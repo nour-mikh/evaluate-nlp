@@ -1,3 +1,4 @@
+const fetch = require("node-fetch")
 function handleSubmit(event) {
     event.preventDefault()
 
@@ -19,7 +20,7 @@ function callApi(userInput) {
     credentials: 'same-origin',
     body: JSON.stringify(userInput),
     headers: {"Content-Type": "application/json"},
-},)
+},) 
 .then(res => res.json())
 .then(function(res) {
     console.log(res);
